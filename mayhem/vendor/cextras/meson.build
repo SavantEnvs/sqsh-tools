@@ -1,0 +1,31 @@
+project(
+    'cextras',
+    'c',
+    default_options: [
+        'c_std=c11',
+        'warning_level=3',
+        'werror=true',
+    ],
+    version: '0.1',
+)
+
+threads_dep = dependency('threads', required: get_option('concurrency'))
+
+subdir('lib')
+subdir('include')
+
+cextras_dep = declare_dependency(
+    include_directories: include_directories('include'),
+    link_with: cextras,
+    dependencies: threads_dep,
+)
+
+subdir('testlib')
+
+if get_option('test')
+    subdir('test')
+endif
+
+if get_option('fuzzer')
+    subdir('fuzzer')
+endif
