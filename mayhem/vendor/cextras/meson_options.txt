@@ -1,0 +1,36 @@
+option(
+    'memory',
+    type: 'boolean',
+    value: false,
+    description: 'Build the memory module.',
+)
+option(
+    'collection',
+    type: 'boolean',
+    value: false,
+    description: 'Build the collection module (requires memory).',
+)
+option(
+    'concurrency',
+    type: 'boolean',
+    value: false,
+    description: 'Build the concurrency module (requires memory).',
+)
+option(
+    'unicode',
+    type: 'boolean',
+    value: false,
+    description: 'Build the unicode module.',
+)
+option(
+    'test',
+    type: 'boolean',
+    value: false,
+    description: 'Run tests.',
+)
+option(
+    'fuzzer',
+    type: 'boolean',
+    value: false,
+    description: 'Run tests.',
+)

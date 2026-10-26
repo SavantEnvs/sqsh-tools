@@ -1,0 +1,8 @@
+project: savantenvs/sqsh-tools
+target: simple
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/simple/testsuite
+cmds:
+  - cmd: /mayhem/simple
+    libfuzzer: true
